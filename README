@@ -15,3 +15,7 @@ thread.py
 ----
 
 this file is measurement file (single thread and multithread).
+
+result (insert into 10000 row(id,name))
+-> single thread: 
+-> multi-thread : 

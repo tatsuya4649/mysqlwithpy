@@ -22,7 +22,7 @@ def _insert(conn,table,values):
 	try:
 		with conn.cursor() as cursor:
 			sql = f"insert into {table} values ({values})"
-			print(sql)
+			#print(sql)
 			conn.begin()
 			cursor.execute(sql)
 			conn.commit()
@@ -56,11 +56,17 @@ if __name__ == "__main__":
 	_TABLE = "animal"
 	_DATA = f'{random.randint(0,1000000)},"neko"'
 	print("----------- single thread ------------")
+	start = time.time()
 	for _ in range(_COUNT):
 		conn = connect(_HOST,_USER,_PASSWORD,_DATABASE)
 		with conn:
 			single_insert(conn,_TABLE,_DATA)
+	end = time.time() - start
+	print(f'elapsed time => {end}[s]')
 	print("----------- multi thread ------------")
+	start = time.time()
 	conn = connect(_HOST,_USER,_PASSWORD,_DATABASE)
 	for _ in range(_COUNT/_THREAD):
 		multi_insert(_THREADS,_TABLE,_DATA)
+	end = time.time() - start
+	print(f'elapsed time => {end}[s]')
