@@ -66,7 +66,7 @@ if __name__ == "__main__":
 	print("----------- multi thread ------------")
 	start = time.time()
 	conn = connect(_HOST,_USER,_PASSWORD,_DATABASE)
-	for _ in range(_COUNT/_THREAD):
+	for _ in range(int(_COUNT/_THREADS)):
 		multi_insert(_THREADS,_TABLE,_DATA)
 	end = time.time() - start
 	print(f'elapsed time => {end}[s]')

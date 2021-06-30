@@ -16,6 +16,8 @@ thread.py
 
 this file is measurement file (single thread and multithread).
 
-result (insert into 10000 row(id,name))
+result (insert into 10000 row(id,name and connect per 1 insert))
 -> single thread: 
+	elapsed time => 185.93506169319153[s] 
 -> multi-thread : 
+	elapsed time => 34.583252906799316[s]
