@@ -1,0 +1,17 @@
+
+MySQL operation with Python(PyMySQL)
+----
+
+this library is 'autocommit'.
+
+So, need to commit to reflect.
+
+ex.py
+----
+
+this file is tutorial file for PyMySQL.
+
+thread.py
+----
+
+this file is measurement file (single thread and multithread).
